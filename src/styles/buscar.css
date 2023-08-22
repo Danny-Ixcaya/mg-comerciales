@@ -1,0 +1,19 @@
+.search-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-icon-button {
+    padding: 6px;
+  }
+  
+  .search-input {
+    width: 200px;
+    height: 20px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    margin-left: 10px;
+    font-size: 14px;
+    transition: width 0.3s ease;
+  }
+  

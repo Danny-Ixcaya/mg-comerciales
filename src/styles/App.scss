@@ -1,0 +1,536 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+:root {
+
+  // --font-poppins: "Poppins";
+  --font-roboto: "Roboto";
+  --subitem-sidebar: #FFB6C1;
+  --color-sidebar: #6b5959;
+  --border-sidebar: #FFB6C1;
+  --border-sidebar2: #05b1ff;
+  --bg-sidebar: #FF69B4;
+  /* #6abac3 #8C3C35 
+  celeste #cf5448 #05b1ff*/
+  --border-menu: #59C3C3;
+  --sidebar-width-open: 250px;
+  --sidebar-width-close: 70px;
+  --sidebar-height-open: 50px;
+  --logo-image: 125px;
+  --logo-image-close: 50px;
+  --margin-header: 4.5em;
+  /* responsive */
+  --sidebar-width-open--tablet: 215px;
+  --sidebar-width-close--tablet: 60px;
+  --margin-add: 10px;
+  --margin-add--header: 20px;
+  --margin-add--tablet: 6px;
+  --logo-image--tablet: 57px;
+  --logo-image-close--tablet: 50px;
+  --random: #da3b2b;
+  --contrasteSubItem: #FF69B4;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+div {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  color: #736B6B !important;
+}
+
+.wrapper {
+  margin-left: calc(var(--sidebar-width-open) + var(--margin-add));
+  transition: all 0.5s;
+  // header
+  margin-top: var(--margin-header);
+}
+
+.side {
+  margin-left: calc(var(--sidebar-width-close) + var(--margin-add));
+  transition: all 0.5s;
+  margin-top: var(--margin-header);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.container-sidebar {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  
+}
+
+main {
+  width: 100%;
+  /*   padding: 20px; */
+}
+
+.header {
+  // background: var(--bg-sidebar);
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-right: 1.2em;
+  width: 100vw;
+  // color: black;
+  border: 1px solid black;
+  position: fixed;
+  // background: #05b1ff;
+  z-index: 50;
+  &-avatar {
+    object-fit: cover;
+  }
+  &-info-user span {
+    // color: white;
+    float: right;
+    font-size: .9em;
+    font-family: var(--font-poppins);
+    margin-right: .5em;
+  }
+}
+
+.header .page-title {
+  // color: var(--color-sidebar);
+  margin-left: .5em;
+  margin-bottom: 0;
+}
+
+.header .header-avatar {
+  border-radius: 50%;
+}
+
+
+
+.sidebar {
+  background: var(--bg-sidebar);
+  color: var(--color-sidebar);
+  height: 140vh;
+  width: 200px;
+  transition: all 0.5s;
+  position: fixed;
+  top: 0;
+  /* transition: 450ms; */
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.sidebarOpen {
+  width: var(--sidebar-width-open);
+}
+
+.sidebarClose {
+  width: var(--sidebar-width-close);
+}
+
+.top_section {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 15px;
+  margin: 0;
+  margin-top: .2em;
+}
+
+.top_section img {
+  width: 50%;
+}
+
+.logo {
+  // font: var(--font-poppins);
+  // font-size: 14px;
+  // margin: 0;
+  margin-top: 10px !important;
+  // background-color: #000 !important;
+  // display: flex;
+  margin: auto;
+  // align-items: center;
+  // font-weight: bold;
+}
+
+aside .top_section .logo-restaurante-open {
+  width: var(--logo-image);
+}
+
+aside .top_section .logo-restaurante-close {
+  width: var(--logo-image-close);
+}
+
+.bars {
+  display: flex;
+  font-size: 25px;
+  margin: 0;
+}
+
+.bars svg {
+  width: 1.2em;
+  height: 1.2em;
+  cursor: pointer;
+}
+
+.link,
+.nav-subItem {
+  display: flex;
+  align-items: center;
+  color: var(--color-sidebar);
+  padding: 10px 15px;
+  gap: 15px;
+  transition: all 0.5s;
+  text-decoration: none;
+}
+
+.nav-subItem {
+  border-bottom: .1px solid var(--contrasteSubItem);
+}
+
+.link:hover {
+  background: var(--border-sidebar);
+  color: var(--color-sidebar);
+  /* color: #000; */
+  transition: all 0.5s;
+  border-radius: 0.5em;
+  /* background-color: var(--item-selected); */
+  overflow: hidden;
+  /*   border-left: 4px solid var(--border-sidebar2); */
+  border-left: 5.5px solid var(--border-menu);
+}
+
+/*------- Widgets del dashboard ------- */
+/* #link-1, #link-2, #link-3, #link-4 {
+  border-left: 5.5px solid white;
+  transition: all 0.5s;
+  border-radius: 0.5em;
+} */
+#link-1:hover{
+  background: rgba(254, 250, 250, 0.44);
+}
+#link-4:hover{
+  background: rgba(254, 250, 250, 0.44); 
+}
+#link-2:hover {
+  background: #41414154;
+}
+#link-3:hover {
+  background: #41414154;
+}
+/* ----------------------------------- */
+
+.active {
+  background: var(--border-sidebar);
+  color: #000;
+  color: var(--color-sidebar);
+  /* color: #000; */
+  transition: all 0.5s;
+  border-radius: 0.5em;
+  /* background-color: var(--item-selected); */
+  overflow: hidden;
+  /*   border-left: 4px solid var(--border-sidebar2); */
+  border-left: 5.5px solid var(--border-menu);
+}
+
+.icon,
+.link_text {
+  font-size: 16px;
+}
+
+.icon svg {
+  display: inline-block;
+  width: 2.5em;
+  height: 2.5em;
+}
+
+.icon svg path {
+  stroke: var(--color-sidebar);
+}
+
+/* .icon svg path:hover {
+  stroke: #000;
+} */
+
+.nav-subItem {
+  background-color: var(--subitem-sidebar);
+  padding-left: 20px;
+}
+
+.icon .sidebar-arrow {
+  /* width: 2em; */
+  align-self: center;
+  display: inherit;
+}
+
+.icon .sidebar-arrow svg {
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+}
+
+a .sidebar-arrow-isOpen svg {
+  width: 1em;
+  height: 1em;
+}
+
+.nav-icon {
+  font-size: 2em;
+  color: var(--white);
+  /* height: 80px; */
+  display: flex;
+  align-items: center;
+  width: 100%;
+  transition: all 0.5s;
+}
+
+.nav-icon svg path {
+  color: var(--color-sidebar);
+}
+
+.nav-icon-open {
+  margin-left: calc(var(--sidebar-width-open) + var(--margin-add));
+}
+
+.nav-icon-close {
+  margin-left: calc(var(--sidebar-width-close) + var(--margin-add));
+}
+
+/* Scroll ----- */
+.container-sidebar aside {
+  height: 100vh;
+  overflow-x: clip;
+  overflow-y: scroll;
+}
+.container-sidebar aside::-webkit-scrollbar {
+  width: 9px;
+}
+
+/* Si está cerrada la sidebar, disminuye el ancho del scroll */
+.container-sidebar .sidebarClose::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Ponemos un color de fondo y redondeamos las esquinas del thumb */
+.container-sidebar aside::-webkit-scrollbar-thumb {
+  background: var(--contraste);
+  border-radius: 4px;
+}
+
+/* Cambiamos el fondo y agregamos una sombra cuando est� en hover */
+.container-sidebar aside::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Cambiamos el fondo cuando est� en active */
+aside::-webkit-scrollbar-thumb:active {
+  background-color: #999999;
+}
+
+#title-edit-sale-1, #title-edit-sale-2  {
+  color: #8b1e3f;
+}
+
+/* ********** ESTILOS GLOBALES ********* */
+
+/* Inventario */
+.inventory-buttons {
+  display: flex;
+  justify-content: center;
+  flex: 1 0 auto;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+.inventory-title {
+  font-size: 2.2em;
+  text-align: center;
+  color: #736B6B;
+}
+
+/* Input number ----- */
+input[type="number"] {
+  -moz-appearance: textfield; /* Para Firefox */
+}
+input[type="number"]::-webkit-inner-spin-button,
+.number-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"]:focus::-webkit-inner-spin-button,
+.number-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"]:focus {
+  outline: none;
+}
+
+
+
+/* Breakpoint tablet horizontal */
+@media screen and (max-width: 1024px) {
+  /* Estilos para controles datepicker, select */
+  // date picker y select
+  .date-picker .inputBox, 
+  #date-filter--purchases, #date-filter--sales, #date-filter--cashBox {
+    font-size: .9em;
+  }
+  // Botone para modales
+  #btn-modal--sales, #btn-modal--sales-fake, #btn-modal--purchases, #btn-modal--purchases-fake {
+    font-size: .9em;
+  }
+  /* Estilos para todas las tablas */
+  table thead tr th {
+    font-size: .9em;
+  }
+  table tbody tr td {
+    font-size: .9em;
+  }
+  #btn-observaciones {
+    font-size: .8em;
+  }
+}
+
+/* Breakpoint tablet */
+@media screen and (max-width: 835px) {
+  /* .sidebar {
+    height: 200vh;
+  } */
+  /* Inventario */
+  .inventory-buttons {
+    gap: .5em;
+    a {
+      font-size: .9em;
+    }
+  }
+  .inventory-title {
+    font-size: 1.8em;
+  }
+  /* Estilos para controles datepicker, select */
+  // date picker y select
+  .date-picker .inputBox, 
+  #date-filter--purchases, #date-filter--sales, #date-filter--cashBox {
+    font-size: .8em;
+  }
+  // Botone para modales
+  #btn-modal--sales, #btn-modal--sales-fake, #btn-modal--purchases, #btn-modal--purchases-fake {
+    font-size: .8em;
+  }
+  /* Estilos para todas las tablas */
+  table thead tr th {
+    font-size: .8em;
+  }
+  table tbody tr td {
+    font-size: .8em;
+  }
+  #btn-observaciones {
+    font-size: .8em;
+  }
+  /* -------------- Sidebar ------------ */
+  .header {
+    height: 50px;
+    &-avatar {
+      width: 40px;
+      height: 40px;
+    }
+    &-info-user span {
+      font-size: .8em;
+    }
+  }
+  
+  .header .page-title {
+    font-size: .7em;
+  }
+  
+  .header .header-avatar {
+    border-radius: 50%;
+  }
+  
+  .icon,
+  .link_text {
+    font-size: .9em;
+  }
+
+  .sidebarClose {
+    width: var(--sidebar-width-close--tablet);
+  }
+  .sidebarOpen {
+    width: var(--sidebar-width-open--tablet);
+  }
+  .wrapper {
+    margin-left: calc(var(--sidebar-width-open--tablet) + var(--margin-add--tablet));
+    transition: all 0.5s;
+  }
+  .side {
+    margin-left: calc(var(--sidebar-width-close--tablet) + var(--margin-add--tablet));
+    transition: all 0.5s;
+  }
+  .icon svg {
+    width: 2.1em;
+    height: 2.1em;
+  }
+
+  .nav-icon-open {
+    margin-left: calc(var(--sidebar-width-open--tablet) + var(--margin-add--tablet));
+  }
+  
+  .nav-icon-close {
+    margin-left: calc(var(--sidebar-width-close--tablet) + var(--margin-add--tablet));
+  }
+
+  aside .top_section .logo .logo-text-right {
+    font-size: 13px;
+  }
+
+  aside .top_section .logo-restaurante-open {
+    width: var(--logo-image--tablet);
+  }
+  aside .top_section .logo-restaurante-close {
+    width: var(--logo-image-close--tablet);
+  }
+}
+
+/* Exclusivo para módulo de caja */
+// Archivo CashTest.jsx
+@media screen and (max-width: 748px) {
+  #table-cash--open {
+    width: 100%;
+    border-collapse: collapse;
+    tr .table-cash-head {
+      font-size: .78em;
+    }
+    tbody tr td {
+      font-size: .78em!important;
+    }
+    .table-cash-item--bruto {
+      display: none;
+    }
+  }
+  
+}
+
+// @media screen and (max-width: 576px) {
+//   .wrapper {
+//     margin-left: var(--margin-add--tablet);
+//   }
+//   .side {
+//     margin-left: var(--margin-add--tablet);
+//   }
+//   .nav-icon-close {
+//     margin-left: .5em;
+//   }
+
+//   .sidebarClose {
+//     display: none;
+//   }
+// }

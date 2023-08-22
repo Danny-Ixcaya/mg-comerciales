@@ -1,0 +1,201 @@
+.comanda-digital {
+  display: grid;
+  grid-template-columns: 65% 30%;
+  gap: 2em;
+  max-width: 100%;
+  .table-resumen {
+    max-width: 100%;
+  }
+}
+.comanda {
+  /* display: grid;
+  justify-content: center; */
+  // border: 1px solid #eee;
+  &-flex-controls {
+    margin-bottom: 1em;
+    justify-content: center;
+  }
+  h2,label {
+    color: #8b1e3f;
+    font-weight: 500;
+  }
+  h2 {
+    text-align: center;
+  }
+  &-form {
+    border-radius: 20px;
+    // padding: 1em;
+    margin-bottom: 2em; 
+    align-self: center;
+  }
+  &-top-btn {
+    align-self: center;
+    width: 226px;
+    a {
+      background-color: #8b1e3f;
+      color: white;
+      padding: .7em .8em;
+    }
+    a:hover {
+      background-color: transparent;
+      border: 1px solid #8b1e3f;
+      color: #8b1e3f;
+    }
+  }
+}
+
+
+.table-buttons {
+  display: flex;
+  justify-content: center;
+  /* display: grid;
+  height: 50px;
+  grid-template-areas: 
+    "cantidad btnplus"
+    "cantidad  btnminus";
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 75% 25%;
+  justify-content: center; */
+}
+
+th {
+  font-size: .9em;
+}
+
+td .input-cantidad {
+  width: 68px;
+}
+
+.table-total-items {
+  font-weight: bold;
+}
+
+.table-total-items .total-td-title {
+  text-align: end!important;
+}
+
+button svg {
+  border-radius: 2em;
+  overflow: hidden;
+}
+
+.btn-plus {
+  border: 1px solid #ccc;
+  border-radius: .5em;
+  padding: .5em;
+}
+.svg:hover {
+  color: #4c1022
+}
+
+.btn-minus {
+  border: 1px solid #ccc;
+  border-radius: .5em;
+  padding: .5em;
+}
+
+.footer-table {
+  text-align: right;
+}
+
+/* Table resumen comanda*/
+.table-summary-item {
+  display: block;
+  width: 100%;
+}
+
+.table-no-comanda {
+  font-size: 1.1em;
+  text-align: center;
+}
+
+/* Componente inferior */
+.resumen-comanda {
+  border: 1px solid #ccc;
+  border-radius: 2em;
+  padding: 1em;
+  box-shadow: 2px 2px 8px #acabab;
+}
+
+tr {
+  text-align: center;
+}
+
+.table-resumen-body .row-resumen {  
+  display: block;
+  text-align: center;
+  width: 100%;
+  height: 3.5em;
+/*   text-align: center; */
+}
+
+td .total-comanda {
+  font-weight: bold;
+}
+
+thead tr .resumen-title {
+  text-align: center;
+  color: #8b1e3f;
+  font-size: 1.1em;
+}
+.table-buttons .input-cantidad-edit {
+  width: 60px;
+}
+
+.resumen-total {
+  color: #8b1e3f;
+}
+
+@media screen and (max-width: 1024px) {
+  .comanda {
+    label { 
+      font-size: .9em;
+    }
+    &-control-3 {
+      a {
+        font-size: .7em;
+      }
+    }
+  }
+  thead tr .resumen-title {
+    font-size: 1em;
+  }
+}
+
+/* Breakpoints --> Tablet */
+@media screen and (max-width: 768px) {
+  .comanda-digital {
+    grid-template-columns: auto;
+    .resumen-comanda {
+      width: 60%;
+      justify-self: center;
+      flex-wrap: wrap;
+    }
+  }
+  .comanda {
+    label {
+      font-size: .8em;
+    }
+    &-flex-controls {
+      justify-content: center;
+    }
+    &-control-1 {
+      order: 1;
+    }
+    &-control-2 {
+      order: 3;
+      justify-self: center;
+    }
+    &-control-3 {
+      order: 2;
+    }
+  }
+}
+
+@media screen and (max-width: 695px) {
+  .comanda {
+    label {
+      font-size: .65em;
+    }
+  }
+}
